@@ -72,9 +72,7 @@ export default function ConsentPage() {
 
             {/* Supporting Copy */}
             <p className="text-slate-700 leading-relaxed text-pretty text-sm mb-5">
-              To help us assess your claim, this secure link allows you to connect your bank account using Open Banking.
-              Boshhh Group Limited offers access to this service which is provided by Finexer who are authorised by the
-              Financial Conduct Authority (FCA).
+              To help us assess your claim, this secure link allows you to connect your bank account using Open Banking. Boshhh Group Limited offers access to this service which is provided by Finexer who are authorised by the Financial Conduct Authority (FCA). 
             </p>
 
             <p className="text-slate-700 leading-relaxed mb-6 text-pretty text-sm">
