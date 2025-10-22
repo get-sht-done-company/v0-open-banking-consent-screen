@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Lock } from "lucide-react"
+import { LockIcon } from "lucide-react"
 import Image from "next/image"
 
 // Utility function to convert text to sentence case
@@ -35,41 +35,43 @@ export default function ConsentPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
       {/* Header */}
       <header className="w-full px-4 py-6 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto flex items-center justify-between px-3">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/barings-law-logo.webp"
-              alt="Barings Law"
-              width={200}
-              height={60}
-              className="h-15 w-auto"
-              priority
-            />
-          </div>
-          <div className="flex items-center">
-            <Image
-              src="/boshhh-group-logo.webp"
-              alt="Boshhh Group"
-              width={175}
-              height={40}
-              className="w-auto h-10"
-              priority
-            />
-          </div>
-        </div>
+        <div className="max-w-2xl mx-auto"></div>
       </header>
 
       {/* Main Content */}
       <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 lg:p-10 transition-shadow">
-            {/* Greeting */}
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 text-balance tracking-tight">
-              Hi, {userName}
-            </h1>
+            {/* Greeting and Logos */}
+            <div className="flex justify-between items-center mb-6">
+              {/* Greeting */}
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 text-balance tracking-tight mb-0">
+                Hi, {userName}
+              </h1>
+
+              {/* Overlapping Logos */}
+              <div className="flex items-center flex-shrink-0">
+                <Image
+                  src="/barings-icon.webp"
+                  alt="Barings Law"
+                  width={48}
+                  height={48}
+                  className="rounded-full relative z-10 shadow-none border border-slate-100 h-11 w-11"
+                  priority
+                />
+                <Image
+                  src="/boshhh-icon-new.webp"
+                  alt="Boshhh"
+                  width={48}
+                  height={48}
+                  className="rounded-full -ml-2 shadow-none border-2 border-slate-100 h-11 w-11"
+                  priority
+                />
+              </div>
+            </div>
 
             {/* Supporting Copy */}
-            <p className="text-slate-700 leading-relaxed mb-6 text-pretty text-sm">
+            <p className="text-slate-700 leading-relaxed text-pretty text-sm mb-5">
               To help us assess your claim, this secure link allows you to connect your bank account using Open Banking.
               Boshhh Group Limited offers access to this service which is provided by Finexer who are authorised by the
               Financial Conduct Authority (FCA).
@@ -82,8 +84,8 @@ export default function ConsentPage() {
             </p>
 
             {/* Trust Row */}
-            <div className="flex items-center gap-2 mb-8 p-4 bg-blue-50 rounded-lg border border-blue-100">
-              <Lock className="w-5 h-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
+            <div className="flex items-center gap-2 mb-8 p-4 bg-blue-50 rounded-lg border border-blue-100 py-3 px-4">
+              <LockIcon className="w-5 h-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
               <p className="text-sm text-blue-900 font-medium">Bank grade encryption. Read only access.</p>
             </div>
 
