@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { LockIcon } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 // Utility function to convert text to sentence case
 function toSentenceCase(text: string): string {
@@ -14,6 +15,7 @@ export default function ConsentPage() {
   const [consent2, setConsent2] = useState(false)
   const [showError, setShowError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
   const userName = toSentenceCase("VITAII LOZOVOI")
 
@@ -24,11 +26,9 @@ export default function ConsentPage() {
     }
     setShowError(false)
     setIsLoading(true)
-    // Simulate submission
     setTimeout(() => {
-      setIsLoading(false)
-      // Handle actual submission here
-    }, 2000)
+      router.push("/success")
+    }, 500)
   }
 
   return (
@@ -72,7 +72,9 @@ export default function ConsentPage() {
 
             {/* Supporting Copy */}
             <p className="text-slate-700 leading-relaxed text-pretty text-sm mb-5">
-              To help us assess your claim, this secure link allows you to connect your bank account using Open Banking. Boshhh Group Limited offers access to this service which is provided by Finexer who are authorised by the Financial Conduct Authority (FCA). 
+              To help us assess your claim, this secure link allows you to connect your bank account using Open Banking.
+              Boshhh Group Limited offers access to this service which is provided by Finexer who are authorised by the
+              Financial Conduct Authority (FCA).
             </p>
 
             <p className="text-slate-700 leading-relaxed mb-6 text-pretty text-sm">
