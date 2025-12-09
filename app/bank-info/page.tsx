@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ShieldIcon,Lock } from "lucide-react"
+import { ShieldIcon, Lock } from "lucide-react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 
@@ -45,7 +45,7 @@ export default function BankInfoPage() {
 
             {/* Intro Text */}
             <p className="text-slate-700 leading-relaxed text-pretty text-center mb-8">
-              We now just need your bank information so our legal team can confirm your eligibility.
+              We now need to verify your bank details so our legal team can confirm your eligibility.
             </p>
 
             {/* Trust Indicator 1 - Bank-grade security */}
@@ -60,12 +60,23 @@ export default function BankInfoPage() {
             </div>
 
             {/* Trust Indicator 2 - Read-only access */}
-            <div className="flex items-center mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100 gap-3 px-4 py-3">
+            <div className="flex items-center mb-2 p-4 bg-blue-50 rounded-lg border border-blue-100 gap-3 px-4 py-3">
               <Lock className="w-5 h-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
               <div>
                 <p className="text-sm font-medium text-primary">Read-only access</p>
                 <p className="text-xs mt-1 text-slate-700">
                   We can view your transactions, but never move, manage, or touch your money.
+                </p>
+              </div>
+            </div>
+
+            {/* Trust Indicator 3 - Required */}
+            <div className="flex items-center mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100 gap-3 px-4 py-3">
+              <Lock className="w-5 h-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
+              <div>
+                <p className="text-sm font-medium text-primary">Required</p>
+                <p className="text-xs mt-1 text-slate-700">
+                  A quick bank check lets our legal team verify affordability and confirm your eligibility.
                 </p>
               </div>
             </div>
