@@ -22,10 +22,10 @@ export default function BankInfoPage() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8 pt-4 pb-24 sm:pb-4">
+      <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8 sm:pb-4 pr-3 pl-3 pt-3 pb-3">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 lg:p-10">
-            <div className="flex items-center justify-center mb-6">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 lg:p-10 py-6 pb-1 pl-5 pr-5 pt-5">
+            <div className="flex flex-col items-center justify-center mb-6 gap-4">
               <div className="rounded-2xl border border-slate-200 p-4 bg-white py-0 px-0">
                 <Image
                   src="/sentinel-logo.webp"
@@ -34,6 +34,15 @@ export default function BankInfoPage() {
                   height={160}
                   className="h-28 w-auto rounded-2xl"
                   priority
+                />
+              </div>
+              <div>
+                <Image
+                  src="/boshhh-group-logo-text.webp"
+                  alt="Boshhh Group"
+                  width={150}
+                  height={30}
+                  className="w-auto h-5"
                 />
               </div>
             </div>
@@ -48,11 +57,13 @@ export default function BankInfoPage() {
               We now need to verify your bank details so our legal team can confirm your eligibility.
             </p>
 
+            <h2 className="text-lg font-semibold text-slate-900 tracking-tight mb-4">Connecting your bank is:</h2>
+
             {/* Trust Indicator 1 - Bank-grade security */}
-            <div className="flex items-center mb-2 p-4 rounded-lg border gap-3 px-4 py-3 bg-green-50 border-green-200">
-              <ShieldIcon className="w-5 h-5 flex-shrink-0 text-green-600" aria-hidden="true" />
+            <div className="flex items-center mb-2 p-4 rounded-lg border gap-3 py-3 bg-purple-50 border-purple-200 px-3">
+              <ShieldIcon className="w-5 h-5 flex-shrink-0 text-purple-600" aria-hidden="true" />
               <div>
-                <p className="text-sm font-medium text-primary">Bank-grade security</p>
+                <p className="font-medium text-primary text-xs">100% Secure </p>
                 <p className="text-xs mt-1 text-slate-700">
                   Your data is protected using regulated Open Banking technology.
                 </p>
@@ -60,10 +71,10 @@ export default function BankInfoPage() {
             </div>
 
             {/* Trust Indicator 2 - Read-only access */}
-            <div className="flex items-center mb-2 p-4 bg-blue-50 rounded-lg border border-blue-100 gap-3 px-4 py-3">
-              <Lock className="w-5 h-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
+            <div className="flex items-center mb-2 p-4 bg-[#C78E5F]/10 rounded-lg border border-[#C78E5F]/30 gap-3 py-3 px-3">
+              <Lock className="w-5 h-5 text-[#C78E5F] flex-shrink-0" aria-hidden="true" />
               <div>
-                <p className="text-sm font-medium text-primary">Read-only access</p>
+                <p className="font-medium text-primary text-xs">Read-only access</p>
                 <p className="text-xs mt-1 text-slate-700">
                   We can view your transactions, but never move, manage, or touch your money.
                 </p>
@@ -71,10 +82,10 @@ export default function BankInfoPage() {
             </div>
 
             {/* Trust Indicator 3 - Required */}
-            <div className="flex items-center mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100 gap-3 px-4 py-3">
-              <Lock className="w-5 h-5 text-blue-600 flex-shrink-0" aria-hidden="true" />
+            <div className="flex items-center mb-6 p-4 bg-[#C78E5F]/10 rounded-lg border border-[#C78E5F]/30 gap-3 py-3 px-3">
+              <Lock className="w-5 h-5 text-[#C78E5F] flex-shrink-0" aria-hidden="true" />
               <div>
-                <p className="text-sm font-medium text-primary">Required</p>
+                <p className="font-medium text-primary text-xs">Required</p>
                 <p className="text-xs mt-1 text-slate-700">
                   A quick bank check lets our legal team verify affordability and confirm your eligibility.
                 </p>
@@ -83,13 +94,17 @@ export default function BankInfoPage() {
 
             {/* Checkbox Consent */}
             <div className="mb-6">
-              <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 transition-colors hover:bg-slate-100 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2">
+              <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 transition-colors hover:bg-slate-100 focus-within:ring-2 focus-within:ring-[#C78E5F] focus-within:ring-offset-2 pl-3 pr-3 pb-3 pt-3">
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <input
                     type="checkbox"
                     checked={consent}
                     onChange={(e) => setConsent(e.target.checked)}
-                    className="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer transition-all"
+                    className="mt-1 w-5 h-5 rounded border-slate-300 focus:ring-2 focus:ring-[#C78E5F] focus:ring-offset-2 cursor-pointer transition-all"
+                    style={{
+                      accentColor: "#C78E5F",
+                      colorScheme: "light",
+                    }}
                     aria-describedby="bank-consent-text"
                   />
                   <span id="bank-consent-text" className="text-slate-700 leading-relaxed flex-1 text-xs">
@@ -105,7 +120,7 @@ export default function BankInfoPage() {
               <button
                 onClick={handleContinue}
                 disabled={!consent}
-                className="w-full sm:w-auto sm:min-w-[200px] px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-slate-300 disabled:text-slate-500 disabled:cursor-not-allowed transition-all duration-200"
+                className="w-full sm:w-auto sm:min-w-[200px] px-8 py-3 bg-[#C78E5F] text-white font-semibold rounded-lg hover:bg-[#B67D4F] focus:outline-none focus:ring-2 focus:ring-[#C78E5F] focus:ring-offset-2 disabled:bg-slate-300 disabled:text-slate-500 disabled:cursor-not-allowed transition-all duration-200"
                 aria-label="Continue to bank connection"
               >
                 Continue
@@ -121,7 +136,7 @@ export default function BankInfoPage() {
           <button
             onClick={handleContinue}
             disabled={!consent}
-            className="w-full px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-slate-300 disabled:text-slate-500 disabled:cursor-not-allowed transition-all duration-200"
+            className="w-full px-8 py-3 bg-[#C78E5F] text-white font-semibold rounded-lg hover:bg-[#B67D4F] focus:outline-none focus:ring-2 focus:ring-[#C78E5F] focus:ring-offset-2 disabled:bg-slate-300 disabled:text-slate-500 disabled:cursor-not-allowed transition-all duration-200"
             aria-label="Continue to bank connection"
           >
             Continue
