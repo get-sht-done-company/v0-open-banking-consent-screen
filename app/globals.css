@@ -75,7 +75,6 @@
 }
 
 @theme inline {
-  /* Updated font to Plus Jakarta Sans */
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
@@ -124,7 +123,6 @@
     @apply bg-background text-foreground;
   }
 
-  /* Adding tight letter spacing for headings and subheadings (-25%) */
   h1,
   h2,
   h3,
@@ -134,7 +132,6 @@
     letter-spacing: -0.025em;
   }
 
-  /* Adding smooth animations for consent screen interactions */
   @keyframes fade-in {
     from {
       opacity: 0;
