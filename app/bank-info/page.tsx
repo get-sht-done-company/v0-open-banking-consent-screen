@@ -21,15 +21,15 @@ export default function BankInfoPage() {
 
       <main className="flex-1 px-3 py-3 sm:px-6 lg:px-8 sm:pb-4">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl border border-slate-200 p-5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-5 pt-8">
             <div className="flex flex-col items-center justify-center mb-6 gap-4">
-              <div className="rounded-2xl border border-slate-200 p-0 bg-white">
+              <div className="p-3 border border-slate-200 rounded-xl">
                 <Image
                   src="/sentinel-logo.webp"
                   alt="Sentinel Legal"
-                  width={400}
-                  height={160}
-                  className="h-28 w-auto rounded-2xl"
+                  width={300}
+                  height={120}
+                  className="h-auto w-full max-w-[300px]"
                   priority
                 />
               </div>
@@ -51,8 +51,8 @@ export default function BankInfoPage() {
               You're nearly done
             </h1>
 
-            <p className="text-slate-700 leading-relaxed text-pretty text-center mb-8">
-              We now need to verify your bank details so our legal team can confirm your eligibility.
+            <p className="text-slate-700 leading-relaxed text-pretty text-center mb-8 text-base">
+              By giving us read-only access to your transactions, we can speed up your refund by up to six weeks.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900 tracking-tight mb-4">Connecting your bank is:</h2>
