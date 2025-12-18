@@ -27,9 +27,9 @@ export default function BankInfoPage() {
                 <Image
                   src="/sentinel-logo.webp"
                   alt="Sentinel Legal"
-                  width={300}
-                  height={120}
-                  className="h-auto w-full max-w-[300px]"
+                  width={150}
+                  height={60}
+                  className="h-auto w-full max-w-[150px]"
                   priority
                 />
               </div>
